@@ -1,0 +1,121 @@
+.kslider-wrapper {
+  position: relative;
+  display: block;
+  margin: 0 auto;
+}
+
+@media (max-width: 480px) {
+  .kslider-wrapper {
+    max-width: 100%;
+  }
+}
+
+.kslider {
+  display: block;
+  width: 960px;
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
+  padding: 0;
+  list-style-type: none;
+  box-shadow: 1px 5px 10px rgba(0, 0, 0, .5);
+}
+
+.kslider li {
+  position: absolute;
+  display: none;
+  margin: 0;
+}
+
+.kslider li.active {
+  display: block;
+}
+
+.kslider li img {
+  max-width: 100%;
+}
+
+.kslider-alt {
+  font-size: 1rem;
+  position: absolute;
+  top: 25px;
+  left: 25px;
+  display: block;
+  padding: 5px 10px;
+  text-transform: uppercase;
+  color: #dfdfdf;
+  background: rgba(0, 0, 0, .5);
+}
+
+@media (max-width: 480px) {
+  .kslider-alt {
+    font-size: .75rem;
+    top: 10px;
+    left: 10px;
+  }
+}
+
+/* Navigation */
+.kslider-nav {
+  font-size: 2.5rem;
+  position: absolute;
+  top: 0;
+  width: 100px;
+  height: 100%;
+  transition: all all .3s ease-in-out ease-in-out;
+  opacity: 0;
+}
+
+.kslider-nav.nav-left a,
+.kslider-nav.nav-right a {
+  position: relative;
+  top: 40%;
+  display: none;
+  text-align: center;
+  color: #dfdfdf;
+}
+
+.kslider-nav.nav-left {
+  left: 0;
+}
+
+.kslider-nav.nav-right {
+  right: 0;
+}
+
+.kslider-nav:hover {
+  cursor: pointer;
+  opacity: 1;
+}
+
+.kslider-nav:hover.nav-left a,
+.kslider-nav:hover.nav-right a {
+  display: block;
+}
+
+/* Bullets list */
+.kslider-bullets-wrapper {
+  position: absolute;
+  bottom: 2.50%;
+  width: 100%;
+}
+
+.kslider-bullets {
+  position: relative;
+  width: 200px;
+  margin: 0 auto;
+  padding-left: 0;
+  text-align: center;
+}
+
+.kslider-bullets li {
+  display: inline-block;
+}
+
+.kslider-bullets li .icon-circle {
+  color: #e2e2e2;
+}
+
+.kslider-bullets li .icon-circle-empty {
+  color: #dfdfdf;
+}

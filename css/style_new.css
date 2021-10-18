@@ -1,0 +1,40 @@
+
+/*// Large devices (desktops, 992px and up)
+@media (min-width: 992px) */
+@media screen and (max-width: 992px) {
+    #before_nav_table {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    #after_nav_table {
+        display: none;
+    }
+}
+
+.hidden-slider {
+    background-color: red;
+    height: 300px;
+}
+
+
+/*
+@media screen and (min-width: 576px) 
+
+
+@media (max-width: 768px) {
+    #after_nav_table {
+        display: none;
+    }
+}
+*/
+/* // Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px)
+@media screen and (min-width: 768px) 
+@media (min-width: 768px) {
+    #after_nav_table {
+        display: none;
+    }
+}
+*/

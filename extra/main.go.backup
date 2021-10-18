@@ -1,0 +1,109 @@
+package main
+
+import (
+	"fmt"
+	"html/template"
+	"io/ioutil"
+	"net/http"
+)
+
+func ifErr(err error) {
+	if err != nil {
+		panic(err)
+	} else {
+		return
+	}
+}
+var tpl *template.Template
+
+func init() {
+	tpl = template.Must(template.ParseGlob("*.html"))
+}
+
+func main() {
+	http.Handle("/public/", http.StripPrefix("/public/", http.FileServer(http.Dir("/home/ansverma/Documents/Devendra/try1/"))))
+	http.HandleFunc("/", home)
+	http.HandleFunc("/about", about)
+	http.HandleFunc("/mywork", mywork)
+	http.HandleFunc("/contact", contact)
+	http.ListenAndServe(":8080", nil)
+
+}
+
+type PageStruct struct {
+	ImagesC1 []string
+	ImagesC2 []string
+	ImagesC3 []string
+	ImagesC4 []string
+}
+
+func home(w http.ResponseWriter, r *http.Request) {
+	fmt.Println("home")
+	t, err := template.ParseFiles("index.html")
+	ifErr(err)
+	ps := PageStruct{}
+
+	files, err := ioutil.ReadDir("./home_page_pics")
+	ifErr(err)
+
+	quotient := len(files) / 4
+	reminder := len(files) % 4
+	if reminder == 1 {
+		ps.ImagesC1 = make([]string, quotient+1)
+		ps.ImagesC2 = make([]string, quotient)
+		ps.ImagesC3 = make([]string, quotient)
+		ps.ImagesC4 = make([]string, quotient)
+	}
+	if reminder == 2 {
+		ps.ImagesC1 = make([]string, quotient+1)
+		ps.ImagesC2 = make([]string, quotient+1)
+		ps.ImagesC3 = make([]string, quotient)
+		ps.ImagesC4 = make([]string, quotient)
+	}
+	if reminder == 3 {
+		ps.ImagesC1 = make([]string, quotient+1)
+		ps.ImagesC2 = make([]string, quotient+1)
+		ps.ImagesC3 = make([]string, quotient+1)
+		ps.ImagesC4 = make([]string, quotient)
+	}
+	j := 0
+	for i := 0; i < len(ps.ImagesC1); i++ {
+		ps.ImagesC1[i] = files[i].Name()
+		j++
+	}
+	for i := 0; i < len(ps.ImagesC2); i++ {
+		ps.ImagesC2[i] = files[j].Name()
+		j++
+	}
+	for i := 0; i < len(ps.ImagesC3); i++ {
+		ps.ImagesC3[i] = files[j].Name()
+		j++
+	}
+	for i := 0; i < len(ps.ImagesC4); i++ {
+		ps.ImagesC4[i] = files[j].Name()
+		j++
+	}
+
+	err = tpl.ExecuteTemplate(w, "index.html", ps)
+	if err != nil {
+		panic(err)
+	}
+}
+
+func about(w http.ResponseWriter, r *http.Request) {
+	t, err := template.ParseFiles("about.html")
+	ifErr(err)
+	t.Execute(w, nil)
+}
+
+func mywork(w http.ResponseWriter, r *http.Request) {
+	t, err := template.ParseFiles("mywork.html")
+	ifErr(err)
+	t.Execute(w, nil)
+}
+
+func contact(w http.ResponseWriter, r *http.Request) {
+	t, err := template.ParseFiles("contact.html")
+	ifErr(err)
+	t.Execute(w, nil)
+}

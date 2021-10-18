@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<html>
+    {{template "header"}}
+    <body> <!-- style="background-color: #e6e6e6"> -->
+      {{template "navbar.html"}}
+        <section class="gallery-block grid-gallery">
+            <div class="container">
+                <div class="heading">
+                    <h2>{{.RouteName}}</h2>
+                </div>
+                <div class="row ">
+                    {{$route := .Route}}
+                    {{range $image := .ImageNames}}
+                    <div class="col-sm-6 col-md-3 col-lg-2 item ">
+                        <a class="lightbox " href="/public/img{{$route}}/{{$image}}"  >
+                            <img class="img-fluid image scale-on-hover " src="/public/img{{$route}}/{{$image}}">
+                        </a>
+                    </div>
+                    {{end}}
+       
+                </div>
+            </div>
+        </section>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.js"></script>
+        <script>
+                baguetteBox.run('.grid-gallery', { animation: 'slideIn'});             
+        </script>
+    </body>
+</html>
