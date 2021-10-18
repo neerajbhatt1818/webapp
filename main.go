@@ -74,7 +74,7 @@ func main() {
 		http.HandleFunc(routesInfo[i].Route, h)
 		i++
 	}
-	err := http.ListenAndServe(":8000", nil)
+	err := http.ListenAndServe(":8080", nil)
 	ifErr(err)
 }
 
