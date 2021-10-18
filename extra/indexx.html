@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title> Devendra Rajput Photography</title>
+        <link rel="icon" href="tab_icon">
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="/public/style.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <!-- jQuery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+        <!-- Popper JS -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+
+        <!-- Latest compiled JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+        <!-- <link rel="stylesheet" href="styles.css"> -->
+
+        <!-- Google Fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Dancing+Script" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Dosis|Open+Sans+Condensed:300" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Poiret+One" rel="stylesheet">
+    </head>
+    <body> <!-- style="background-color: #e6e6e6"> -->
+
+
+        <div class="row"> 
+            <div class="column">
+                {{range $image := .ImagesC1}}
+                <div class="black-opacity view overlay zoom"><img src="/public/home_page_pics/{{$image}}" style="width:100%"> </div>
+                {{end}}
+            </div>
+            <div class="column">
+                {{range $image := .ImagesC2}}
+                <div class="black-opacity view overlay zoom"><img src="/public/home_page_pics/{{$image}}" style="width:100%"></div>
+                {{end}}
+            </div>
+            <div class="column">
+                {{range $image := .ImagesC3}}
+                <div class="black-opacity view overlay zoom"><img src="/public/home_page_pics/{{$image}}" style="width:100%"></div>
+                {{end}}
+            </div>
+            <div class="column">
+                {{range $image := .ImagesC4}}
+                <div class="black-opacity view overlay zoom"><img src="/public/home_page_pics/{{$image}}" style="width:100%"></div>
+                {{end}}
+            </div>
+        </div>
+    </body>
+</html>

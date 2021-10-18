@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<html>
+    <head>
+        <style>
+                * {
+                  box-sizing: border-box;
+                }
+                
+                body {
+                  margin: 0;
+                  font-family: Arial;
+                }
+                
+                .header {
+                  text-align: center;
+                  padding: 32px;
+                }
+                
+                .row {
+                  display: -ms-flexbox; /* IE10 */
+                  display: flex;
+                  -ms-flex-wrap: wrap; /* IE10 */
+                  flex-wrap: wrap;
+                  padding: 0 4px;
+                }
+                
+                /* Create four equal columns that sits next to each other */
+                .column {
+                  -ms-flex: 25%; /* IE10 */
+                  flex: 25%;
+                  max-width: 25%;
+                  padding: 0 4px;
+                }
+                
+                .column img {
+                  margin-top: 8px;
+                  vertical-align: middle;
+                }
+                
+                /* Responsive layout - makes a two column-layout instead of four columns */
+                @media screen and (max-width: 800px) {
+                  .column {
+                    -ms-flex: 50%;
+                    flex: 50%;
+                    max-width: 50%;
+                  }
+                }
+                
+                /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+                @media screen and (max-width: 600px) {
+                  .column {
+                    -ms-flex: 100%;
+                    flex: 100%;
+                    max-width: 100%;
+                  }
+                }
+
+
+
+
+                .form-bg {
+                  position: absolute;
+                  z-index: -2;
+                  width: 100%;
+                  height: 100%;
+                  top: 0;
+                  left: 0;
+                }
+                .black-opacity { background-color: #000000; }
+                .black-opacity img { opacity: 0.5; }
+        </style>
+        
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title> Devendra Rajput Photography</title>
+        <link rel="icon" href="tab_icon">
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+
+        <!-- jQuery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+        <!-- Popper JS -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+
+        <!-- Latest compiled JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+        <!-- <link rel="stylesheet" href="styles.css"> -->
+    </head>
+    <body >
+        <!-- Just an image -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+          <a class="navbar-brand" href="#">
+            <img src="DR_Logo.png" height="110" style="margin-bottom: -40px;" alt="dr logo">
+          </a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item active">
+                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Features</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Pricing</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link disabled" href="#">Disabled</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+        <div style="text-align: center;">
+          <div class="form-bg black-opacity " ><img style="height: 100%; width: 100%;" src="https://mir-s3-cdn-cf.behance.net/project_modules/1400/4a3ecc70444365.5ba38f332fb61.jpg"></div>
+          <div style="border-style: solid; border-color: red; height: 100px; width: 100px; ">
+            <form>
+              
+            </form>
+          </div>
+        </div>
+        <!--
+        <script>
+            var txt = "";
+            txt = "<img style=\"height:" + screen.height + "; width: " + screen.width + "\" src=\"https://mir-s3-cdn-cf.behance.net/project_modules/1400/53b02870463807.5ba4002b4efd7.jpg\">";
+            document.getElementById("imgg").innerHTML = txt;
+          </script>
+        -->
+    </body>
+</html>
